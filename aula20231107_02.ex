@@ -6,6 +6,7 @@ defmodule Aula02 do
   def maior([valor]) do
     valor
   end
+
   def maior([valor1, valor2]) do
     cond do
       valor1>valor2 -> valor1
@@ -20,5 +21,13 @@ defmodule Aula02 do
       valor2>valor1 -> maior([valor2|cauda])
       true          -> maior([valor1|cauda])
     end
+  end
+
+  def soma([]) do
+    0
+  end
+
+  def soma([cabeca | cauda]) do
+    cabeca + soma(cauda)
   end
 end
